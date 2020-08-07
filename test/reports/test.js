@@ -110,26 +110,6 @@ describe('Reports', () => {
 
 
 
-      describe('/test', function() {
-      before('connect', function() {
-        return mongoose.createConnection(mongoUrl);
-      });
-
-      beforeEach(async function(done) {
-        try {
-          chai.request('http://localhost:3000')
-            .post('/api/test')
-            .send(something)
-            .end((err, res) => {
-              if (err) return done(err);
-              done();
-            });
-        } catch (error) {
-          done(error);
-        }
-      });
-    });
-
 
 
 
