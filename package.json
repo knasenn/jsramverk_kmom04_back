@@ -3,8 +3,8 @@
   "version": "1.0.1",
   "main": "index.js",
   "scripts": {
-    "pretest": "bash db/reset_test_db.bash",
-    "test": "nyc --reporter=html --reporter=text mocha test/**/*.js",
+    "test": "nyc --reporter=html --reporter=text --reporter=clover mocha test/**/*.js",
+    "coverage": "nyc report --reporter=text-lcov | coveralls",
     "start": "node app.js",
     "stop": "taskkill -F -IM node.exe",
     "production": "NODE_ENV='production' node app.js",
@@ -27,14 +27,15 @@
     "sqlite3": "^4.1.1"
   },
   "devDependencies": {
-    "nodemon": "^2.0.2",
     "chai": "^4.2.0",
     "chai-http": "^4.3.0",
+    "coveralls": "^3.1.0",
     "eslint": "^6.4.0",
     "eslint-plugin-react": "^7.14.3",
     "eslint-plugin-vue": "^5.2.3",
     "javascript-style-guide": "^1.0.1",
     "mocha": "^6.2.0",
+    "nodemon": "^2.0.2",
     "nyc": "^14.1.1"
   },
   "keywords": [],
