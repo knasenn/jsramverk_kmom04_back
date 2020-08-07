@@ -3,6 +3,7 @@
   "version": "1.0.1",
   "main": "index.js",
   "scripts": {
+    "pretest": "bash db/reset_test_db.bash",
     "test": "nyc --reporter=html --reporter=text mocha test/**/*.js",
     "start": "node app.js",
     "stop": "taskkill -F -IM node.exe",
