@@ -1,11 +1,11 @@
 checks:
     javascript: true
 build:
-    nodes:
-        analysis:
-            tests:
-                override:
-                    - js-scrutinizer-run
-                    coverage:
-                      file: coverage/clover.xml
-                      format: clover
+  nodes:
+    coverage:
+      tests:
+        override:
+          - command: npm test
+            coverage:
+              file: coverage/clover.xml
+              format: clover
