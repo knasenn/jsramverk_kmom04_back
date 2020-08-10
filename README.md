@@ -9,6 +9,4 @@ scrutinizer [![Build Status](https://scrutinizer-ci.com/g/knasenn/jsramverk_kmom
 
 
 
-
-
 scrutinizer [![Code Coverage](https://scrutinizer-ci.com/g/knasenn/jsramverk_kmom04_back/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/knasenn/jsramverk_kmom04_back/?branch=master)

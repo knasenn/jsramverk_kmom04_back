@@ -29,10 +29,10 @@ router.get("/week/:id", (req, res) => {
     db.each("SELECT * FROM reports WHERE week = ?",
     req.params.id,(err, row) => {
   	if (err) {
-  		console.log(err);
+  		// console.log(err);
       res.sendStatus(403);
   	} else {
-      console.log(row);
+      // console.log(row);
       const data = {
               title: row.title,
               text: row.text
@@ -54,7 +54,7 @@ router.post("/", (req, res) => {
 	db.each("SELECT COUNT(*) AS total FROM reports WHERE week = ?",
   req.body.week,(err, row) => {
 	if (row.total == 1) {
-		console.log("week exist");
+		// console.log("week exist");
     db.run("UPDATE reports SET text = ? WHERE week = ?",
         req.body.text,req.body.week, (err) => {
         if (err) {
@@ -71,7 +71,7 @@ router.post("/", (req, res) => {
         });
     });
 	} else {
-    console.log("does not exist");
+    // console.log("does not exist");
 		db.run("INSERT INTO reports (week, text) VALUES (?, ?)",
 				req.body.week,req.body.text, (err) => {
 				if (err) {

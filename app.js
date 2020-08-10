@@ -52,22 +52,22 @@ app.get('/', function(req, res, next) {
     res.json(data);
 });
 
-// Add a route
-app.get("/logg", (req, res) => {
-  // console.log("----------------");
-  // console.log("req.body");
-  // console.log("----------------");
-  res.end("string-get");
-});
-
-
-// Add a route
-app.post("/logg", (req, res) => {
-  // console.log("----------------");
-  // console.log(req.body);
-  // console.log("----------------");
-  res.end("string-post");
-});
+// // Add a route
+// app.get("/logg", (req, res) => {
+//   // console.log("----------------");
+//   // console.log("req.body");
+//   // console.log("----------------");
+//   res.end("string-get");
+// });
+//
+//
+// // Add a route
+// app.post("/logg", (req, res) => {
+//   // console.log("----------------");
+//   // console.log(req.body);
+//   // console.log("----------------");
+//   res.end("string-post");
+// });
 
 // Testing routes with method
 app.get("/user", (req, res) => {
@@ -144,12 +144,11 @@ app.post("/register", (req, res) => {
 app.post("/login", (req, res) => {
   // console.log("----------------");
 	// console.log("*login_user PSOT2*");
-  console.log(req.body.email);
-  console.log(req.body.password);
+
 	db.each("SELECT COUNT(*) AS total FROM users WHERE (email, password) = (?,?)",
   req.body.email,req.body.password,(err, row) => {
 	if (row.total == 1) {
-		// console.log("yes, user exist");
+
 		const user = {
 			email: req.body.email,
 			password: req.body.password
@@ -164,7 +163,7 @@ app.post("/login", (req, res) => {
 			});
 		});
 	} else {
-		// console.log("user does NOT exist");
+		
 		res.json({
 			msg: "erro"
 		});
